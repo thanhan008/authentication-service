@@ -2,7 +2,10 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gem 'aws-sdk-cognitoidentity'
-gem 'figaro'
+gem 'aws-sdk-cognitoidentityprovider'
+gem 'aws-sdk-cognitosync'
+gem 'dotenv'
+gem 'racksh'
 gem 'sinatra'
 
 group :development do
