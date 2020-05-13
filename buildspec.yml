@@ -19,9 +19,8 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - echo `pwd`
-      - echo `ls -l`
-      # - aws s3 cp s3://workshop-codebuild-artifacts/authentication/aws.env config/aws.env
+      - aws s3 cp s3://workshop-codebuild-artifacts/authentication/aws.env config/aws.env
+      - echo Config files
       - echo Building the Docker image...
       - docker build -t $REPOSITORY_URI:latest .
       - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG
@@ -33,5 +32,7 @@ phases:
       - docker push $REPOSITORY_URI:$IMAGE_TAG
       - echo Writing image definitions file...
       - printf '[{"name":"workshop-authentication","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
+      - echo Listing config files...
+      - ls -l config
 artifacts:
     files: imagedefinitions.json
