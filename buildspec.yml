@@ -20,8 +20,7 @@ phases:
     commands:
       - echo Build started on `date`
       - echo copying config files...
-      - aws s3 cp s3://workshop-codebuild-settings/authentication config --recursive
-      - echo Listing config files...
+      - aws s3 cp s3://workshop-codebuild-settings/authentication-service config --recursive
       - ls -l config
       - echo Building the Docker image...
       - docker build -t $REPOSITORY_URI:latest .
