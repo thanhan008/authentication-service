@@ -6,7 +6,12 @@ services:
       context: .
       dockerfile: "Dockerfile"
     ports:
-      - "9292:9292"
+      - "3000:80"
     environment:
       - RAILS_ENV=production
       - RACK_ENV=production
+    healthcheck:
+      test: wget --quiet --tries=1 --spider http://localhost:80/status || exit 1z
+      interval: 30s
+      timeout: 10s
+      retries: 5

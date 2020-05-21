@@ -8,6 +8,10 @@ class Application < Sinatra::Base
     content_type 'application/json'
   end
 
+  get '/status' do
+    body 'In a good mood.'
+  end
+
   post '/login' do
     cognito_params = Cognito::Params::Login.build!(login_params)
     resp = identity_provider_client.admin_respond_to_auth_challenge(cognito_params)

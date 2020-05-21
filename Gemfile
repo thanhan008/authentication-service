@@ -9,6 +9,7 @@ gem 'aws-sdk-cognitosync'
 gem 'dotenv'
 gem 'racksh'
 gem 'sinatra'
+gem 'thin'
 
 group :development do
   gem 'brakeman'
