@@ -8,10 +8,6 @@ class Application < Sinatra::Base
     content_type 'application/json'
   end
 
-  get '/status' do
-    body 'In a good mood.'
-  end
-
   get '/authentication-status' do
     body 'In a good mood.'
   end
@@ -28,6 +24,8 @@ class Application < Sinatra::Base
       }
       [200, {}, [ret.to_json]]
     end
+  rescue Aws::CognitoIdentityProvider::Errors::NotAuthorizedException
+    [401, {}, ['Invalid credential']]
   end
 
   patch '/init_password' do
