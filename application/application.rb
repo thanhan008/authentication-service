@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+#:nodoc:
 require 'sinatra'
 require 'json'
 

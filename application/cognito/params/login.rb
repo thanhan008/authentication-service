@@ -2,6 +2,7 @@
 
 module Cognito
   module Params
+    # Build paramter to login an user via Cognito.
     class Login < Default
       def self.build!(params)
         super do |h|

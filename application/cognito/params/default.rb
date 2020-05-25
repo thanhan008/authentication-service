@@ -2,6 +2,8 @@
 
 module Cognito
   module Params
+    # Build basic paramters for login via Cognito
+    # https://docs.aws.amazon.com/sdk-for-ruby/v3/api/Aws/CognitoIdentityProvider/Client.html#admin_respond_to_auth_challenge-instance_method
     class Default
       def self.build!(params)
         HashBuilder.build! do |h|

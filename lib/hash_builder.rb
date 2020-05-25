@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Build a hash with ruby block.
 class HashBuilder
   instance_methods.each do |m|
     undef_method m unless m =~ /(^__|^nil\?$|^send$|^object_id$)/
@@ -42,6 +43,7 @@ class HashBuilder
   end
 end
 
+# inject method into Hash class.
 class Hash
   unless method_defined?(:build!)
     def build!(&block)

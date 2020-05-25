@@ -2,6 +2,7 @@
 
 module Cognito
   module Params
+    # Build parameters to init an user password on Congnito.
     class InitPassword < Default
       def self.build!(params)
         super do |h|
