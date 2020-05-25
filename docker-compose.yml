@@ -1,7 +1,7 @@
 version: '3'
 services:
   workshop-authentication:
-    container_name: workshop-authentication
+    container_name: authentication-service
     build:
       context: .
       dockerfile: "Dockerfile"
