@@ -11,7 +11,7 @@ services:
       - RAILS_ENV=production
       - RACK_ENV=production
     healthcheck:
-      test: wget --quiet --tries=1 --spider http://localhost:80/status || exit 1z
+      test: wget --quiet --tries=1 --spider http://localhost:80/authentication-status || exit 1z
       interval: 30s
       timeout: 10s
       retries: 5
