@@ -1,6 +1,8 @@
-FROM ruby:2.6.1
+FROM ruby:2.6.1-alpine
 
-RUN apt-get update -qq && apt-get install -y build-essential
+# Install dependencies:
+# - build-base: To ensure certain gems can be compiled
+RUN apk --update add build-base
 
 ENV APP_HOME /app
 RUN mkdir $APP_HOME
